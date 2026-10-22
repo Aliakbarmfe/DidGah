@@ -179,11 +179,11 @@
                     <div class="pt-2 flex flex-wrap justify-center gap-4 text-xs sm:text-sm font-medium text-brand-text">
                         <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-brand-border shadow-sm">
                             <i class="fa-solid fa-circle-check text-brand-secondary"></i>
-                            <span>تمرینات مبتنی بر Gamification</span>
+                            <span>تمرینات مبتنی برای تمامی سنین</span>
                         </div>
                         <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-brand-border shadow-sm">
                             <i class="fa-solid fa-circle-check text-brand-secondary"></i>
-                            <span>پشتیبانی اختصاصی و تلفظ IPA</span>
+                            <span>پشتیبانی اختصاصی</span>
                         </div>
                     </div>
 
@@ -224,7 +224,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Course Card 1: Beginner -->
-                    <div class="bg-white rounded-card border border-brand-border p-6 shadow-floating hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="bg-white rounded-card border border-brand-border p-6 shadow-floating hover:shadow-xl transition-all duration-300 flex flex-col justify-between group course-card cursor-pointer">
                         <div class="space-y-4">
                             <div class="flex justify-between items-center">
                                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-600 font-en">A1 - A2</span>
@@ -240,24 +240,31 @@
                                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary"></i> تمرین‌های شنیداری اولیه</li>
                             </ul>
                         </div>
-                        <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-brand-textMuted block">شهریه دوره</span>
-                                <span class="text-base font-bold text-brand-primary">۱,۴۵۰,۰۰۰ تومان</span>
+                        <div>
+                            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-brand-textMuted block">شهریه دوره</span>
+                                    <span class="text-base font-bold text-brand-primary">۱,۴۵۰,۰۰۰ تومان</span>
+                                </div>
+                                <span class="text-xs text-brand-accent font-semibold flex items-center gap-1">
+                                    جزئیات <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+                                </span>
                             </div>
-                            <a href="#" class="px-4 py-2 rounded-btn bg-slate-100 hover:bg-brand-accent hover:text-white text-brand-primary font-semibold text-xs btn-interact">
-                                مشاهده جزئیات
-                            </a>
+                            <!-- Dropdown Registration Button -->
+                            <div class="course-dropdown overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                <div class="pt-3">
+                                    <a href="#start" class="block w-full py-2.5 rounded-btn bg-brand-accent hover:bg-brand-accentHover text-white font-bold text-xs text-center shadow-cta btn-interact">
+                                        ثبت نام
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Course Card 2: Intermediate (Featured) -->
-                    <div class="bg-white rounded-card border-2 border-brand-accent p-6 shadow-floating hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group">
-                        <div class="absolute -top-3.5 right-6 bg-brand-accent text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                            پیشنهاد ویژه
-                        </div>
+                    <!-- Course Card 2: Intermediate (Updated: no orange border, no featured badge) -->
+                    <div class="bg-white rounded-card border border-brand-border p-6 shadow-floating hover:shadow-xl transition-all duration-300 flex flex-col justify-between group course-card cursor-pointer">
                         <div class="space-y-4">
-                            <div class="flex justify-between items-center pt-2">
+                            <div class="flex justify-between items-center">
                                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-orange-50 text-brand-accent font-en">B1 - B2</span>
                                 <span class="text-xs text-brand-textMuted"><i class="fa-regular fa-clock ml-1"></i>۶۰ ساعت آموزش</span>
                             </div>
@@ -271,19 +278,29 @@
                                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary"></i> تصحیح تلفظ و لهجه</li>
                             </ul>
                         </div>
-                        <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-brand-textMuted block">شهریه دوره</span>
-                                <span class="text-base font-bold text-brand-primary">۲,۱۰۰,۰۰۰ تومان</span>
+                        <div>
+                            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-brand-textMuted block">شهریه دوره</span>
+                                    <span class="text-base font-bold text-brand-primary">۲,۱۰۰,۰۰۰ تومان</span>
+                                </div>
+                                <span class="text-xs text-brand-accent font-semibold flex items-center gap-1">
+                                    جزئیات <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+                                </span>
                             </div>
-                            <a href="#" class="px-4 py-2 rounded-btn bg-brand-accent text-white font-semibold text-xs shadow-cta btn-interact">
-                                ثبت‌نام دوره
-                            </a>
+                            <!-- Dropdown Registration Button -->
+                            <div class="course-dropdown overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                <div class="pt-3">
+                                    <a href="#start" class="block w-full py-2.5 rounded-btn bg-brand-accent hover:bg-brand-accentHover text-white font-bold text-xs text-center shadow-cta btn-interact">
+                                        ثبت نام
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Course Card 3: Advanced & IELTS -->
-                    <div class="bg-white rounded-card border border-brand-border p-6 shadow-floating hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="bg-white rounded-card border border-brand-border p-6 shadow-floating hover:shadow-xl transition-all duration-300 flex flex-col justify-between group course-card cursor-pointer">
                         <div class="space-y-4">
                             <div class="flex justify-between items-center">
                                 <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-brand-secondary font-en">C1 - C2</span>
@@ -299,14 +316,24 @@
                                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary"></i> آنالیز بازخورد توسط استاد</li>
                             </ul>
                         </div>
-                        <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-xs text-brand-textMuted block">شهریه دوره</span>
-                                <span class="text-base font-bold text-brand-primary">۲,۸۵۰,۰۰۰ تومان</span>
+                        <div>
+                            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-brand-textMuted block">شهریه دوره</span>
+                                    <span class="text-base font-bold text-brand-primary">۲,۸۵۰,۰۰۰ تومان</span>
+                                </div>
+                                <span class="text-xs text-brand-accent font-semibold flex items-center gap-1">
+                                    جزئیات <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+                                </span>
                             </div>
-                            <a href="#" class="px-4 py-2 rounded-btn bg-slate-100 hover:bg-brand-accent hover:text-white text-brand-primary font-semibold text-xs btn-interact">
-                                مشاهده جزئیات
-                            </a>
+                            <!-- Dropdown Registration Button -->
+                            <div class="course-dropdown overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                <div class="pt-3">
+                                    <a href="#start" class="block w-full py-2.5 rounded-btn bg-brand-accent hover:bg-brand-accentHover text-white font-bold text-xs text-center shadow-cta btn-interact">
+                                        ثبت نام
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -318,8 +345,9 @@
         <!-- ==================== FEATURES / WHY US SECTION ==================== -->
         <section id="features" class="py-16 bg-slate-100/70 border-t border-brand-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     
+                    <!-- Feature 1 -->
                     <div class="bg-white p-6 rounded-card border border-brand-border shadow-sm flex items-start gap-4">
                         <div class="w-12 h-12 rounded-btn bg-blue-50 text-brand-primary flex items-center justify-center shrink-0 text-xl">
                             <i class="fa-solid fa-brain"></i>
@@ -330,6 +358,18 @@
                         </div>
                     </div>
 
+                    <!-- Feature 2: Newly Added Below Logic Box -->
+                    <div class="bg-white p-6 rounded-card border border-brand-border shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-btn bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-primary mb-1">آموزش کاربردی برای تمامی سنین</h4>
+                            <p class="text-xs text-brand-textMuted leading-relaxed">برنامه‌های آموزشی انعطاف‌پذیر و اصولی، کاملاً متناسب با سبک یادگیری زبان‌آموزان در تمامی رده‌های سنی.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
                     <div class="bg-white p-6 rounded-card border border-brand-border shadow-sm flex items-start gap-4">
                         <div class="w-12 h-12 rounded-btn bg-emerald-50 text-brand-secondary flex items-center justify-center shrink-0 text-xl">
                             <i class="fa-solid fa-gamepad"></i>
@@ -340,6 +380,7 @@
                         </div>
                     </div>
 
+                    <!-- Feature 4 -->
                     <div class="bg-white p-6 rounded-card border border-brand-border shadow-sm flex items-start gap-4">
                         <div class="w-12 h-12 rounded-btn bg-orange-50 text-brand-accent flex items-center justify-center shrink-0 text-xl">
                             <i class="fa-solid fa-comments"></i>
@@ -356,10 +397,10 @@
 
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- ==================== FOOTER (Trust Symbol Removed) ==================== -->
     <footer class="bg-brand-primary text-white border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                 
                 <!-- Brand Info Column -->
                 <div class="lg:col-span-2 space-y-4">
@@ -406,18 +447,6 @@
                     </ul>
                 </div>
 
-                <!-- Trust Symbol / Contact -->
-                <div class="space-y-3">
-                    <h5 class="text-sm font-bold text-white mb-4">نماد اعتماد</h5>
-                    <div class="bg-slate-800/80 p-4 rounded-card border border-slate-700/50 flex items-center gap-3">
-                        <i class="fa-solid fa-shield-halved text-2xl text-brand-secondary"></i>
-                        <div class="text-[11px] text-slate-300">
-                            <p class="font-bold text-white">تضمین کیفیت آموزش</p>
-                            <p>پلتفرم ثبت‌شده و دارای مجوز رسمی</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
             <!-- Bottom Bar -->
@@ -436,6 +465,20 @@
 
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Course Card Dropdown Toggle ---
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                const dropdown = card.querySelector('.course-dropdown');
+                const chevron = card.querySelector('.fa-chevron-down');
+                
+                dropdown.classList.toggle('max-h-20');
+                dropdown.classList.toggle('opacity-100');
+                if (chevron) {
+                    chevron.classList.toggle('rotate-180');
+                }
+            });
         });
     </script>
 </body>
