@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LingoPulse - پلتفرم هوشمند آموزش زبان انگلیسی</title>
+    <title>DidGah - پلتفرم هوشمند آموزش زبان انگلیسی</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,7 +11,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts: Vazirmatn, Yekan Bakh (via Google / Google Font proxy), Inter, Noto Sans -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -56,7 +55,6 @@
     </script>
 
     <style>
-        /* Base typography and smooth scrolling */
         html {
             font-family: 'Vazirmatn', sans-serif;
             scroll-behavior: smooth;
@@ -72,7 +70,6 @@
             font-family: 'Noto Sans', sans-serif;
         }
 
-        /* Micro-interactions & Custom Animations */
         .btn-interact {
             transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -85,31 +82,6 @@
             transform: translateY(0);
         }
 
-        /* Quiz Animations */
-        @keyframes correctBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes wrongShake {
-            0%, 100% { transform: translateX(0); }
-            20%, 60% { transform: translateX(-6px); }
-            40%, 80% { transform: translateX(6px); }
-        }
-
-        .anim-correct {
-            animation: correctBounce 0.4s ease-in-out;
-            border-color: #10B981 !important;
-            background-color: #ECFDF5 !important;
-        }
-
-        .anim-wrong {
-            animation: wrongShake 0.4s ease-in-out;
-            border-color: #EF4444 !important;
-            background-color: #FEF2F2 !important;
-        }
-
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -133,21 +105,20 @@
             
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 bg-brand-primary rounded-btn flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:bg-brand-primaryLight transition-colors">
-                    <i class="fa-solid font-en text-brand-accent text-2xl">L</i>
+                <div class="w-11 h-11 rounded-btn flex items-center justify-center overflow-hidden shadow-md bg-white border border-brand-border">
+                    <img src="photos/didgahdarklogo.jpg" alt="DidGah Logo" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-extrabold text-xl text-brand-primary tracking-tight font-en">LingoPulse</span>
-                    <span class="text-[10px] text-brand-textMuted font-medium -mt-1">آکادمی هوشمند زبان</span>
+                    <span class="font-extrabold text-xl text-brand-primary tracking-tight font-en">DidGah</span>
+                    <span class="text-[10px] text-brand-textMuted font-medium -mt-1">آکادمی زبان های خارجی دیدگاه</span>
                 </div>
             </a>
 
             <!-- Navigation Links (Desktop) -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-brand-text">
                 <a href="#courses" class="hover:text-brand-accent transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-brand-accent hover:after:w-full after:transition-all">دوره‌های آموزشی</a>
-                <a href="#quiz" class="hover:text-brand-accent transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-brand-accent hover:after:w-full after:transition-all">تست خودسنجی</a>
                 <a href="#grammar" class="hover:text-brand-accent transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-brand-accent hover:after:w-full after:transition-all">دستور زبان & واژگان</a>
-                <a href="#features" class="hover:text-brand-accent transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-brand-accent hover:after:w-full after:transition-all">چرا لینگوپالس؟</a>
+                <a href="#features" class="hover:text-brand-accent transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0.5 after:bg-brand-accent hover:after:w-full after:transition-all">چرا دیدگاه؟</a>
             </nav>
 
             <!-- Actions -->
@@ -156,7 +127,7 @@
                     ورود
                 </a>
                 <a href="#start" class="inline-flex items-center justify-center px-5 py-2.5 rounded-btn text-sm font-semibold text-white bg-brand-accent hover:bg-brand-accentHover shadow-cta hover:shadow-ctaHover btn-interact">
-                    شروع رایگان
+                    ثبت نام
                 </a>
                 <!-- Mobile Menu Button -->
                 <button id="mobileMenuBtn" class="md:hidden p-2 text-brand-primary rounded-lg hover:bg-slate-100 focus:outline-none" aria-label="منو">
@@ -168,9 +139,8 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
             <a href="#courses" class="block py-2 text-base font-medium text-brand-text hover:text-brand-accent">دوره‌های آموزشی</a>
-            <a href="#quiz" class="block py-2 text-base font-medium text-brand-text hover:text-brand-accent">تست خودسنجی</a>
             <a href="#grammar" class="block py-2 text-base font-medium text-brand-text hover:text-brand-accent">دستور زبان & واژگان</a>
-            <a href="#features" class="block py-2 text-base font-medium text-brand-text hover:text-brand-accent">چرا لینگوپالس؟</a>
+            <a href="#features" class="block py-2 text-base font-medium text-brand-text hover:text-brand-accent">چرا دیدگاه؟</a>
             <div class="pt-2 border-t border-slate-100 flex flex-col gap-2">
                 <a href="#login" class="w-full text-center py-2.5 rounded-btn text-sm font-semibold text-brand-primary bg-slate-50">ورود به حساب</a>
             </div>
@@ -187,158 +157,57 @@
             <div class="absolute bottom-10 -left-20 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div class="max-w-3xl mx-auto text-center space-y-6">
                     
-                    <!-- Right Column: Text & CTA -->
-                    <div class="lg:col-span-7 text-center lg:text-right space-y-6">
-                        
-                        <!-- Badge -->
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-brand-secondary text-xs font-semibold">
-                            <span class="w-2 h-2 rounded-full bg-brand-secondary animate-pulse"></span>
-                            <span>متدولوژی جدید آموزش ۲۰۲۶</span>
-                        </div>
-
-                        <!-- Main Heading -->
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-primary leading-tight sm:leading-tight lg:leading-tight">
-                            انگلیسی را با دلیل، عمق و <span class="text-brand-accent">اعتماد به‌نفس</span> صحبت کنید
-                        </h1>
-
-                        <!-- Subtitle with English Phrase -->
-                        <p class="text-base sm:text-lg text-brand-textMuted max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            در آکادمی لینگوپالس هر کلمه و گرامر یک منطق مشخص دارد. سیستم یادگیری تعاملی ما مسیر تسلط شما از سطوح پایه تا مدرک بین‌المللی را کوتاه‌تر می‌کند.
-                        </p>
-
-                        <!-- Highlights list -->
-                        <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-medium text-brand-text">
-                            <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-brand-border shadow-sm">
-                                <i class="fa-solid fa-circle-check text-brand-secondary"></i>
-                                <span>تمرینات مبتنی بر Gamification</span>
-                            </div>
-                            <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-brand-border shadow-sm">
-                                <i class="fa-solid fa-circle-check text-brand-secondary"></i>
-                                <span>پشتیبانی اختصاصی و تلفظ IPA</span>
-                            </div>
-                        </div>
-
-                        <!-- Primary CTA Group -->
-                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <a href="#quiz" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-accent hover:bg-brand-accentHover text-white font-bold text-base shadow-cta hover:shadow-ctaHover btn-interact text-center flex items-center justify-center gap-3">
-                                <span>شروع تعیین سطح رایگان</span>
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a>
-                            <a href="#courses" class="w-full sm:w-auto px-6 py-4 rounded-full bg-white hover:bg-slate-50 text-brand-primary border border-brand-border font-semibold text-base btn-interact text-center">
-                                مشاهده دوره‌ها
-                            </a>
-                        </div>
-
-                        <!-- Social Proof -->
-                        <div class="pt-6 border-t border-slate-200/60 flex items-center justify-center lg:justify-start gap-4 text-xs text-brand-textMuted">
-                            <div class="flex -space-x-2 space-x-reverse">
-                                <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="کاربر لینگوپالس">
-                                <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="کاربر لینگوپالس">
-                                <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="کاربر لینگوپالس">
-                            </div>
-                            <div>
-                                <span class="font-bold text-brand-primary font-en">15,000+</span> زبان‌آموز فعال در سراسر کشور
-                            </div>
-                        </div>
-
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-brand-secondary text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-brand-secondary animate-pulse"></span>
+                        <span>متدولوژی جدید آموزش ۲۰۲۶</span>
                     </div>
 
-                    <!-- Left Column: Interactive Interactive Card Preview -->
-                    <div class="lg:col-span-5">
-                        <div class="bg-white rounded-card p-6 sm:p-8 shadow-floating border border-brand-border relative">
-                            <!-- Header badge -->
-                            <div class="flex items-center justify-between pb-4 border-b border-brand-border mb-6">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                    <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-                                </div>
-                                <span class="text-xs font-semibold text-brand-textMuted font-en">Daily Vocabulary #24</span>
-                            </div>
+                    <!-- Main Heading -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-primary leading-tight sm:leading-tight lg:leading-tight">
+                        انگلیسی را با دلیل، عمق و <span class="text-brand-accent">اعتماد به‌نفس</span> صحبت کنید
+                    </h1>
 
-                            <!-- English Word Card -->
-                            <div class="space-y-4">
-                                <div class="flex items-baseline justify-between">
-                                    <h3 class="text-2xl font-bold font-en text-brand-primary">Resilience</h3>
-                                    <span class="text-xs font-ipa text-slate-500 bg-slate-100 px-2 py-1 rounded">/rɪˈzɪl.jəns/</span>
-                                </div>
-                                <p class="text-xs text-brand-accent font-semibold uppercase tracking-wider font-en">Noun • اسم</p>
-                                <p class="text-sm text-brand-text leading-relaxed">
-                                    قدرت بازگشت به حالت اولیه؛ تاب‌آوری و سرسختی در برابر مشکلات.
-                                </p>
+                    <!-- Subtitle with English Phrase -->
+                    <p class="text-base sm:text-lg text-brand-textMuted max-w-2xl mx-auto leading-relaxed">
+                        آکادمی زبان های خارجی دیدگاه
+                    </p>
 
-                                <!-- Example sentence -->
-                                <div class="bg-slate-50 p-3.5 rounded-btn border-r-4 border-brand-secondary space-y-1">
-                                    <p class="text-xs font-en text-brand-primary font-medium">"Her resilience helped her overcome all difficulties."</p>
-                                    <p class="text-xs text-brand-textMuted">تاب‌آوری او باعث شد بر تمام مشکلات غلبه کند.</p>
-                                </div>
+                    <!-- Highlights list -->
+                    <div class="pt-2 flex flex-wrap justify-center gap-4 text-xs sm:text-sm font-medium text-brand-text">
+                        <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-brand-border shadow-sm">
+                            <i class="fa-solid fa-circle-check text-brand-secondary"></i>
+                            <span>تمرینات مبتنی بر Gamification</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-brand-border shadow-sm">
+                            <i class="fa-solid fa-circle-check text-brand-secondary"></i>
+                            <span>پشتیبانی اختصاصی و تلفظ IPA</span>
+                        </div>
+                    </div>
 
-                                <!-- Audio Player Simulation -->
-                                <button onclick="playSampleAudio()" class="w-full py-2.5 px-4 bg-emerald-50 hover:bg-emerald-100 text-brand-secondary font-semibold text-xs rounded-btn flex items-center justify-center gap-2 transition-colors">
-                                    <i class="fa-solid fa-volume-high"></i>
-                                    <span>شنیدن تلفظ نیتیو (Native Audio)</span>
-                                </button>
-                            </div>
+                    <!-- Primary CTA Group -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#courses" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-accent hover:bg-brand-accentHover text-white font-bold text-base shadow-cta hover:shadow-ctaHover btn-interact text-center flex items-center justify-center gap-3">
+                            <span>مشاهده دوره‌ها</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <div class="pt-6 border-t border-slate-200/60 flex items-center justify-center gap-4 text-xs text-brand-textMuted">
+                        <div class="flex -space-x-2 space-x-reverse">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="کاربر دیدگاه">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="کاربر دیدگاه">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="کاربر دیدگاه">
+                        </div>
+                        <div>
+                            بیش از <span class="font-bold text-brand-primary font-en">1,000</span> زبان‌آموز فعال در سراسر کشور
                         </div>
                     </div>
 
                 </div>
-            </div>
-        </section>
-
-        <!-- ==================== GAMIFIED QUIZ COMPONENT ==================== -->
-        <section id="quiz" class="py-16 bg-white border-y border-brand-border">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
-                    <span class="text-xs font-bold text-brand-accent uppercase tracking-widest font-en">Interactive Test</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-primary">تمرین تعاملی: سطح خود را بسنجید</h2>
-                    <p class="text-sm text-brand-textMuted">پاسخ صحیح را انتخاب کنید تا بازخورد آنی سیستم را مشاهده کنید.</p>
-                </div>
-
-                <!-- Quiz Card Container -->
-                <div class="bg-brand-bg rounded-card p-6 sm:p-8 border border-brand-border shadow-floating relative">
-                    
-                    <!-- Progress Bar Header -->
-                    <div class="space-y-2 mb-6">
-                        <div class="flex justify-between items-center text-xs font-semibold">
-                            <span class="text-brand-primary">پیشرفت کویز</span>
-                            <span id="quizProgressText" class="text-brand-secondary font-en">سوال ۱ از ۳</span>
-                        </div>
-                        <div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
-                            <div id="quizProgressBar" class="h-full bg-brand-secondary transition-all duration-500 rounded-full" style="width: 33.33%;"></div>
-                        </div>
-                    </div>
-
-                    <!-- Question Content -->
-                    <div id="quizContainer" class="space-y-6">
-                        <div class="bg-white p-4 sm:p-6 rounded-btn border border-brand-border">
-                            <span class="text-xs font-bold text-brand-textMuted font-en mb-1 block">Question #<span id="qNum">1</span></span>
-                            <p id="questionText" class="text-base sm:text-lg font-bold font-en text-brand-primary" dir="ltr">
-                                "She ________ English fluently for three years before moving to London."
-                            </p>
-                        </div>
-
-                        <!-- Options Grid -->
-                        <div id="optionsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <!-- Generated by JS -->
-                        </div>
-
-                        <!-- Feedback Message Area -->
-                        <div id="feedbackBox" class="hidden p-4 rounded-btn text-sm font-semibold text-center transition-all"></div>
-
-                        <!-- Next Question Button -->
-                        <div class="flex justify-end">
-                            <button id="nextBtn" onclick="nextQuestion()" class="hidden px-6 py-2.5 bg-brand-primary hover:bg-brand-primaryLight text-white rounded-btn text-sm font-semibold btn-interact">
-                                سوال بعدی <i class="fa-solid fa-arrow-left mr-2"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
         </section>
 
@@ -425,7 +294,7 @@
                                 آماده‌سازی برای آزمون‌های بین‌المللی، نگارش آکادمیک و مکالمات تخصصی کاری و دانشگاهی.
                             </p>
                             <ul class="space-y-2 text-xs text-brand-text pt-2">
-                                <li class="flex items-center gap-2"><li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary"></i> تکنیک‌های Writing & Speaking آیلتس</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary"></i> تکنیک‌های Writing & Speaking آیلتس</li>
                                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary"></i> متون پیچیده ادبی و تخصصی</li>
                                 <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary"></i> آنالیز بازخورد توسط استاد</li>
                             </ul>
@@ -495,11 +364,13 @@
                 <!-- Brand Info Column -->
                 <div class="lg:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-brand-accent rounded-btn flex items-center justify-center text-white font-bold text-xl font-en">L</div>
-                        <span class="font-extrabold text-xl text-white font-en tracking-tight">LingoPulse</span>
+                        <div class="w-10 h-10 rounded-btn flex items-center justify-center overflow-hidden bg-white border border-brand-border">
+                            <img src="photos/didgahdarklogo.jpg" alt="DidGah Logo" class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-extrabold text-xl text-white font-en tracking-tight">DidGah</span>
                     </div>
                     <p class="text-xs text-slate-300 leading-relaxed max-w-sm">
-                        آکادمی هوشمند آموزش زبان انگلیسی. ما با ترکیب متدهای مدرن، یادگیری زبان را به تجربه‌ای لذت‌بخش و ماندگار تبدیل کرده‌ایم.
+                        آکادمی زبان های خارجی دیدگاه. ما با ترکیب متدهای مدرن، یادگیری زبان را به تجربه‌ای لذت‌بخش و ماندگار تبدیل کرده‌ایم.
                     </p>
                     <div class="flex items-center gap-3 pt-2">
                         <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-accent flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="Instagram">
@@ -519,7 +390,6 @@
                     <h5 class="text-sm font-bold text-white mb-4">دسترس سریع</h5>
                     <ul class="space-y-2.5 text-xs text-slate-300">
                         <li><a href="#courses" class="hover:text-brand-accent transition-colors">دوره‌های آموزشی</a></li>
-                        <li><a href="#quiz" class="hover:text-brand-accent transition-colors">آزمون تعیین سطح</a></li>
                         <li><a href="#grammar" class="hover:text-brand-accent transition-colors">بانک گرامر</a></li>
                         <li><a href="#" class="hover:text-brand-accent transition-colors">مقالات آموزشی</a></li>
                     </ul>
@@ -552,7 +422,7 @@
 
             <!-- Bottom Bar -->
             <div class="mt-12 pt-8 border-t border-slate-800 text-center sm:flex sm:justify-between sm:items-center text-xs text-slate-400">
-                <p>© ۲۰۲۶ LingoPulse. تمامی حقوق برای آکادمی محفوظ است.</p>
+                <p>© ۲۰۲۶ DidGah. تمامی حقوق برای آکادمی محفوظ است.</p>
                 <p class="mt-2 sm:mt-0 font-en">Designed for high-impact learning.</p>
             </div>
         </div>
@@ -567,159 +437,6 @@
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        // --- Interactive Quiz Logic ---
-        const quizData = [
-            {
-                question: '"She ________ English fluently for three years before moving to London."',
-                options: [
-                    { text: "has studied", correct: false },
-                    { text: "had been studying", correct: true },
-                    { text: "is studying", correct: false },
-                    { text: "will study", correct: false }
-                ],
-                explanation: "پاسخ درست: Past Perfect Continuous برای نشان دادن عملی که قبل از یک زمان مشخص در گذشته در حال انجام بوده است."
-            },
-            {
-                question: 'Select the correct synonym for "Resilient":',
-                options: [
-                    { text: "Fragile", correct: false },
-                    { text: "Tough / Adaptable", correct: true },
-                    { text: "Weak", correct: false },
-                    { text: "Hesitant", correct: false }
-                ],
-                explanation: "پاسخ درست: Resilient به معنای سرسخت و تاب‌آور است."
-            },
-            {
-                question: '"If I ________ more time, I would learn a third language."',
-                options: [
-                    { text: "have", correct: false },
-                    { text: "had", correct: true },
-                    { text: "will have", correct: false },
-                    { text: "would have", correct: false }
-                ],
-                explanation: "پاسخ درست: شرطی نوع دوم (Second Conditional) برای موقعیت‌های غیرواقعی در حال حاضر از گذشته ساده استفاده می‌کند."
-            }
-        ];
-
-        let currentQIndex = 0;
-        let score = 0;
-
-        function loadQuestion() {
-            const currentQ = quizData[currentQIndex];
-            document.getElementById('qNum').textContent = currentQIndex + 1;
-            document.getElementById('questionText').textContent = currentQ.question;
-            
-            // Update Progress Bar
-            const progressPercent = ((currentQIndex + 1) / quizData.length) * 100;
-            document.getElementById('quizProgressBar').style.width = `${progressPercent}%`;
-            document.getElementById('quizProgressText').textContent = `سوال ${currentQIndex + 1} از ${quizData.length}`;
-
-            // Clear previous feedback and hide Next button
-            const feedbackBox = document.getElementById('feedbackBox');
-            feedbackBox.className = 'hidden p-4 rounded-btn text-sm font-semibold text-center transition-all';
-            document.getElementById('nextBtn').classList.add('hidden');
-
-            // Render Options
-            const grid = document.getElementById('optionsGrid');
-            grid.innerHTML = '';
-
-            currentQ.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.className = 'w-full p-3.5 bg-white border border-brand-border hover:border-brand-primary rounded-btn font-en text-sm font-semibold text-brand-primary text-left transition-all hover:bg-slate-50 flex items-center justify-between';
-                btn.innerHTML = `<span>${opt.text}</span><i class="fa-regular fa-circle text-slate-300"></i>`;
-                
-                btn.onclick = () => selectOption(btn, opt.correct, currentQ.explanation);
-                grid.appendChild(btn);
-            });
-        }
-
-        function selectOption(selectedBtn, isCorrect, explanation) {
-            const grid = document.getElementById('optionsGrid');
-            const buttons = grid.getElementsByTagName('button');
-            const feedbackBox = document.getElementById('feedbackBox');
-
-            // Disable all buttons after selection
-            for (let btn of buttons) {
-                btn.disabled = true;
-                btn.classList.add('cursor-not-allowed', 'opacity-70');
-            }
-            selectedBtn.classList.remove('opacity-70');
-
-            if (isCorrect) {
-                selectedBtn.classList.add('anim-correct');
-                selectedBtn.querySelector('i').className = 'fa-solid fa-circle-check text-brand-secondary';
-                feedbackBox.textContent = `✨ آفرین! ${explanation}`;
-                feedbackBox.className = 'p-4 rounded-btn text-xs sm:text-sm font-semibold text-emerald-800 bg-emerald-100 border border-emerald-300 block';
-                score++;
-            } else {
-                selectedBtn.classList.add('anim-wrong');
-                selectedBtn.querySelector('i').className = 'fa-solid fa-circle-xmark text-red-500';
-                feedbackBox.textContent = `❌ اشتباه بود. ${explanation}`;
-                feedbackBox.className = 'p-4 rounded-btn text-xs sm:text-sm font-semibold text-red-800 bg-red-100 border border-red-300 block';
-            }
-
-            document.getElementById('nextBtn').classList.remove('hidden');
-        }
-
-        function nextQuestion() {
-            currentQIndex++;
-            if (currentQIndex < quizData.length) {
-                loadQuestion();
-            } else {
-                showQuizResults();
-            }
-        }
-
-        function showQuizResults() {
-            const container = document.getElementById('quizContainer');
-            container.innerHTML = `
-                <div class="text-center py-8 space-y-4">
-                    <div class="w-16 h-16 bg-emerald-100 text-brand-secondary rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
-                        <i class="fa-solid fa-trophy"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-primary">تست به پایان رسید!</h3>
-                    <p class="text-sm text-brand-textMuted">شما به <span class="font-bold text-brand-secondary font-en">${score}</span> از <span class="font-bold font-en">${quizData.length}</span> سوال پاسخ درست دادید.</p>
-                    <button onclick="restartQuiz()" class="px-6 py-2.5 bg-brand-accent hover:bg-brand-accentHover text-white rounded-btn text-sm font-bold shadow-cta btn-interact">
-                        شروع مجدد کویز
-                    </button>
-                </div>
-            `;
-        }
-
-        function restartQuiz() {
-            currentQIndex = 0;
-            score = 0;
-            // Re-render initial HTML structure inside quizContainer
-            document.getElementById('quizContainer').innerHTML = `
-                <div class="bg-white p-4 sm:p-6 rounded-btn border border-brand-border">
-                    <span class="text-xs font-bold text-brand-textMuted font-en mb-1 block">Question #<span id="qNum">1</span></span>
-                    <p id="questionText" class="text-base sm:text-lg font-bold font-en text-brand-primary" dir="ltr"></p>
-                </div>
-                <div id="optionsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
-                <div id="feedbackBox" class="hidden p-4 rounded-btn text-sm font-semibold text-center transition-all"></div>
-                <div class="flex justify-end">
-                    <button id="nextBtn" onclick="nextQuestion()" class="hidden px-6 py-2.5 bg-brand-primary hover:bg-brand-primaryLight text-white rounded-btn text-sm font-semibold btn-interact">
-                        سوال بعدی <i class="fa-solid fa-arrow-left mr-2"></i>
-                    </button>
-                </div>
-            `;
-            loadQuestion();
-        }
-
-        // Dummy Audio Player trigger function
-        function playSampleAudio() {
-            const utterance = new SpeechSynthesisUtterance("Resilience");
-            utterance.lang = "en-US";
-            utterance.rate = 0.9;
-            window.speechSynthesis.speak(utterance);
-        }
-
-        // Initialize quiz on load
-        window.onload = function() {
-            loadQuestion();
-        };
     </script>
 </body>
 </html>
-``` 
